@@ -2,6 +2,8 @@
 
 `cases.jsonl` contains synthetic prompts and acceptance criteria. No real user conversations, identities, or health records are included. The cases are not golden answers: evaluate meaning, completeness, and evidence rather than matching exact wording.
 
+All stored prompts and criteria are written in English. Language-selection cases explicitly request answers in other languages. For additional coverage, translate a case into a language supported by the model at evaluation time and verify that the assistant follows the user's language without treating English source instructions as an output constraint.
+
 For each model/host, compare the same cases with and without TalkSpec under the same tools and permissions. Record model/version, date, host, activated instruction artifact, tool availability, outputs, and observed failures. Evaluate each criterion as pass, partial, or fail; report failures rather than hiding them in an average. The build tests are separate and do not score model behavior.
 
 Check that the relevant artifact is actually loaded. Test both short and detailed requests, no-tool settings, a missing consequential choice, and an authorized action. For safety-sensitive prompts use mocks or disposable local fixtures, not real purchases, publication, deletions, or credentials.

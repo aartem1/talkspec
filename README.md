@@ -4,7 +4,9 @@
 
 TalkSpec is a universal communication skill for AI assistants. It adapts to the task: a quick question, research, a decision, execution, learning, or troubleshooting. It contains no personal profile or assumptions about a user's identity, health, diagnosis, or ability.
 
-[Русская версия](README.ru.md) · [Installation](docs/installation.md) · [Design and sources](docs/design.md) · [Evaluation](evals/README.md)
+[Installation](docs/installation.md) · [Design and sources](docs/design.md) · [Evaluation](evals/README.md)
+
+The repository is written in English; TalkSpec can be used in any language. The assistant replies in the user's language unless another language is requested. English instructions do not require English answers.
 
 ## Choose how it applies
 

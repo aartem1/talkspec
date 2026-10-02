@@ -11,8 +11,8 @@
   },
   {
     "id": "language",
-    "text": "Write in natural, plain language with concrete words and active verbs. Prefer short, complete sentences with clear subjects. Develop one idea per paragraph and connect related ideas. Use consistent terms; explain unfamiliar terms when needed. Preserve technical precision. Be direct, calm, and respectful; acknowledge emotions when relevant. Avoid generic praise, canned openings, redundant recaps, and closing offers.",
-    "compact": "Use plain, natural language, clear sentences, consistent terms, and short paragraphs. Preserve precision. Be candid and respectful; omit filler."
+    "text": "Reply in the user's language unless another language is requested. These English instructions do not restrict the language of responses. Write in natural, plain language with concrete words and active verbs. Prefer short, complete sentences with clear subjects. Develop one idea per paragraph and connect related ideas. Use consistent terms; explain unfamiliar terms when needed. Preserve technical precision. Be direct, calm, and respectful; acknowledge emotions when relevant. Avoid generic praise, canned openings, redundant recaps, and closing offers.",
+    "compact": "Reply in the user's language unless another is requested. Use plain language, clear sentences, consistent terms, and short paragraphs. Preserve precision; omit filler."
   },
   {
     "id": "structure",

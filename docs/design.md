@@ -4,6 +4,8 @@
 
 Create one portable communication specification for assistants, without personal data. Adapt presentation to tasks, not assumed characteristics of people. Support skills where available and self-contained instructions everywhere a host accepts them. Do not claim installation into unsupported consumer interfaces, strict STE conformance, guaranteed compliance, or new tool capabilities.
 
+Keep repository documentation, source rules, adapters, and evaluation prompts in English. This is an authoring language, not an output-language restriction. Reply in the user's language by default and honor explicit requests for another language. Apply the same communication principles across languages.
+
 ## Source and artifacts
 
 `spec/rules.json` is the canonical core. Each rule holds full and compact wording. Six scenario files provide optional depth. `scripts/build.py` creates the portable skill, self-contained adapters, and a deterministic manifest. The skill links to only relevant references; always-on instructions include short scenario summaries, while the generic bot prompt includes the full scenarios. Compact instructions omit scenario detail deliberately.

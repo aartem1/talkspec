@@ -1,0 +1,4 @@
+interface:
+  display_name: "TalkSpec"
+  short_description: "Clear, useful communication across tasks"
+  default_prompt: "Use $talkspec to answer clearly and complete the task."

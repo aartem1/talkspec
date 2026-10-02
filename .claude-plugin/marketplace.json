@@ -1,0 +1,11 @@
+{
+  "name": "talkspec",
+  "owner": { "name": "TalkSpec contributors" },
+  "plugins": [
+    {
+      "name": "talkspec",
+      "source": "./",
+      "description": "Clear, complete communication adapted to the task."
+    }
+  ]
+}

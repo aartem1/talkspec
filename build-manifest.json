@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0",
+  "sha256": {
+    "adapters/chatgpt/compact-instructions.txt": "a5451b57807575371eb1afaa4fca6fca19c77f4748d837f4843323953578bb3b",
+    "adapters/chatgpt/custom-instructions.txt": "d8ba2c49453e54c7a3c409424c0bd7ee3b67ab430598f8be35ac09d917b1017f",
+    "adapters/claude-code/CLAUDE.md": "d8ba2c49453e54c7a3c409424c0bd7ee3b67ab430598f8be35ac09d917b1017f",
+    "adapters/codex/AGENTS.md": "d8ba2c49453e54c7a3c409424c0bd7ee3b67ab430598f8be35ac09d917b1017f",
+    "adapters/cursor/talkspec.mdc": "1c85f5565d4a711387421c4299a3d1afbc7a26e6a569d6e5214eb3f7856d3e43",
+    "adapters/cursor/user-rules.txt": "d8ba2c49453e54c7a3c409424c0bd7ee3b67ab430598f8be35ac09d917b1017f",
+    "adapters/generic/system-prompt.md": "9992bbb1686aea90b1d31e56110ed5dad09e5a95efbd260b7043797155604a90",
+    "adapters/grok/system-message.json": "a4c5c7b37b7f477d737fce5b267a8f8a571f279754b57eaba65f9431e8b50314",
+    "skills/talkspec/SKILL.md": "5f6208f77530eaf20db54eefe008f90976f8cbbdde3ac1c919dc03dbf8714ab4",
+    "skills/talkspec/agents/openai.yaml": "5c7acca8a49efb5721507ce48e40364f21498ed0e7e2d46a2aac636c0a918d50",
+    "skills/talkspec/references/decision.md": "ec916d2cbaeee6692612f769109db26bcf136ee727176b68acda604d9b3ef582",
+    "skills/talkspec/references/execution.md": "9cd446b862a1b0a6124ef50c79f6805327d498d54e716865b0f96d450c9b08fb",
+    "skills/talkspec/references/learning.md": "7c1370eebd808b9a41e3358813cf5634cdc6182fe594bf5b506debb72184d636",
+    "skills/talkspec/references/quick-answer.md": "55fb7f8629537e1de58052f29cb1ea2c39edbcb904c1e555ec65f50882ad1a7a",
+    "skills/talkspec/references/research.md": "67aa0185c97e2a4598716aadc15c158f55b0cd047149f08a6b4b0e1945811363",
+    "skills/talkspec/references/troubleshooting.md": "2430cf7315e730833afe1b78d6edcfd1e74cf152a81af364c58b4ac59843ff7e"
+  },
+  "instruction_characters": {
+    "full": 4146,
+    "compact": 1212
+  }
+}

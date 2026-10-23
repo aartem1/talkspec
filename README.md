@@ -71,7 +71,7 @@ python3 scripts/build.py --check
 python3 -m unittest discover -s tests -v
 ```
 
-The deterministic build checks instruction budgets of 6,500 and 2,000 characters and emits SHA-256 hashes. CI checks generated files and installer behavior. These checks do not establish cross-model behavioral quality; use the [evaluation cases](evals/cases.jsonl) on your models.
+The deterministic build checks instruction budgets of 6,500 and 2,100 characters and emits SHA-256 hashes. CI checks generated files and installer behavior. These checks do not establish cross-model behavioral quality; use the [evaluation cases](evals/cases.jsonl) on your models.
 
 ## License
 

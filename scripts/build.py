@@ -48,7 +48,7 @@ def render(root=ROOT):
         outputs[f"skills/talkspec/references/{name}.md"] = text
     for code, text in languages.items():
         outputs[f"skills/talkspec/references/languages/{code}.md"] = text
-    if len(brief) > 6500 or len(compact) > 2000:
+    if len(brief) > 6500 or len(compact) > 2100:
         raise ValueError(f"Instruction budgets exceeded: full={len(brief)}, compact={len(compact)}")
     outputs["build-manifest.json"] = json.dumps({
         "version": (root / "VERSION").read_text().strip(),

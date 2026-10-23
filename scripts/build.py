@@ -7,6 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SCENARIOS = ("quick-answer", "research", "decision", "execution", "learning", "troubleshooting")
+LANG_NAMES = {"en": "English", "ru": "Russian"}
 DESCRIPTION = "Clear, complete, evidence-based communication. Use when the user requests TalkSpec, clearer answers, or a reusable communication style."
 
 
@@ -16,6 +17,10 @@ def render(root=ROOT):
     compact = "\n\n".join(r["compact"] for r in rules) + "\n"
     # Compact fields live next to their full rules, avoiding an independent prompt stack.
     scenarios = {name: (root / f"spec/scenarios/{name}.md").read_text(encoding="utf-8") for name in SCENARIOS}
+    # Language sections are written in their own language and ship with the skill as references only;
+    # always-on adapters carry just the pointer sentence from rules.json.
+    languages = {path.stem: path.read_text(encoding="utf-8") for path in sorted((root / "spec/languages").glob("*.md"))}
+    lang_routing = "\n".join(f"- **{LANG_NAMES.get(code, code)}:** Read [details](references/languages/{code}.md) when writing in {LANG_NAMES.get(code, code)}." for code in languages)
     summaries = [(name, text.split("\n\n", 2)[0][2:], text.split("\n\n", 2)[1]) for name, text in scenarios.items()]
     routing = "\n".join(f"- **{title}:** {summary} Read [details](references/{name}.md) when needed." for name, title, summary in summaries)
     inline = "\n".join(f"- {title}: {summary}" for _, title, summary in summaries)
@@ -24,7 +29,9 @@ def render(root=ROOT):
     skill = (f"---\nname: talkspec\ndescription: {json.dumps(DESCRIPTION)}\n---\n\n# TalkSpec\n\n"
              + core + "\n## Situation-specific guidance\n\n"
              + "Use the current request to choose relevant guidance. Read only what adds value; do not load all references by default. Combine approaches when needed. Do not announce modes or enforce a fixed response template.\n\n"
-             + routing + "\n")
+             + routing + "\n\n## Language-specific guidance\n\n"
+             + "The core names categories; each language section shows how the categories appear in that language and adds rules that exist only there. Read the section for the language of the reply alongside the core. English is the default when a language has no section.\n\n"
+             + lang_routing + "\n")
     outputs = {
         "skills/talkspec/SKILL.md": skill,
         "skills/talkspec/agents/openai.yaml": 'interface:\n  display_name: "TalkSpec"\n  short_description: "Clear, useful communication across tasks"\n  default_prompt: "Use $talkspec to answer clearly and complete the task."\n',
@@ -39,6 +46,8 @@ def render(root=ROOT):
     }
     for name, text in scenarios.items():
         outputs[f"skills/talkspec/references/{name}.md"] = text
+    for code, text in languages.items():
+        outputs[f"skills/talkspec/references/languages/{code}.md"] = text
     if len(brief) > 6500 or len(compact) > 2000:
         raise ValueError(f"Instruction budgets exceeded: full={len(brief)}, compact={len(compact)}")
     outputs["build-manifest.json"] = json.dumps({

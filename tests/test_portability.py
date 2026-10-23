@@ -42,7 +42,36 @@ class PortabilityTests(unittest.TestCase):
         self.assertTrue(skill.startswith('---\nname: talkspec\n'))
         for link in re.findall(r'\]\((references/[^)]+)\)', skill):
             self.assertIn('skills/talkspec/' + link, outputs)
-        self.assertEqual(len(re.findall(r'\]\(references/', skill)), 6)
+        languages = list((ROOT / 'spec/languages').glob('*.md'))
+        self.assertEqual(len(re.findall(r'\]\(references/', skill)), 6 + len(languages))
+
+    def test_language_sections_exist_and_are_referenced(self):
+        outputs = render()
+        skill = outputs['skills/talkspec/SKILL.md']
+        for code in ('en', 'ru'):
+            source = ROOT / 'spec' / 'languages' / f'{code}.md'
+            self.assertTrue(source.is_file(), source)
+            target = f'skills/talkspec/references/languages/{code}.md'
+            self.assertIn(target, outputs)
+            self.assertEqual(outputs[target], source.read_text(encoding='utf-8'))
+            self.assertIn(f'](references/languages/{code}.md)', skill)
+
+    def test_core_is_english_only(self):
+        import re
+        # Non-English scripts are allowed only inside a language section written in
+        # that language (spec/languages/<code>.md for code != 'en' and its skill copy).
+        foreign = re.compile(r'[Ѐ-ӿ֐-׿؀-ۿͰ-Ͽ぀-ヿ一-鿿가-힯]')
+        sources = [ROOT / 'spec/rules.json', ROOT / 'spec/languages/en.md']
+        sources += sorted((ROOT / 'spec/scenarios').glob('*.md'))
+        for path in sources:
+            self.assertIsNone(foreign.search(path.read_text(encoding='utf-8')), str(path))
+        for name, text in render().items():
+            parts = Path(name).parts
+            if len(parts) == 5 and parts[:4] == ('skills', 'talkspec', 'references', 'languages') and parts[4] != 'en.md':
+                continue
+            self.assertIsNone(foreign.search(text), name)
+        russian = (ROOT / 'spec/languages/ru.md').read_text(encoding='utf-8')
+        self.assertRegex(russian, r'[Ѐ-ӿ]')
 
     def test_managed_block_preserves_other_bytes_and_is_idempotent(self):
         for original in (b'', b'# Existing\r\nKeep this.', b'# Existing\n'):

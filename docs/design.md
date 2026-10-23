@@ -8,7 +8,7 @@ Keep repository documentation, source rules, adapters, and evaluation prompts in
 
 ## Source and artifacts
 
-`spec/rules.json` is the canonical core. Each rule holds full and compact wording. Six scenario files provide optional depth. `scripts/build.py` creates the portable skill, self-contained adapters, and a deterministic manifest. The skill links to only relevant references; always-on instructions include short scenario summaries, while the generic bot prompt includes the full scenarios. Compact instructions omit scenario detail deliberately.
+`spec/rules.json` is the canonical core. Each rule holds full and compact wording. Six scenario files provide optional depth. Per-language sections in `spec/languages/`, each written in its own language, ship with the skill as references; the core stays in English and points to them. `scripts/build.py` creates the portable skill, self-contained adapters, and a deterministic manifest. The skill links to only relevant references; always-on instructions include short scenario summaries, while the generic bot prompt includes the full scenarios. Compact instructions omit scenario detail deliberately.
 
 The build enforces instruction-field budgets, rather than arbitrary limits on answers. The installer offers explicit always-on and on-demand modes and uses native documented paths. It refuses unsafe replacement and does not add broad triggers, permission directives, hooks, or network dependencies. This repository produces a reusable skill; it does not silently install it into the creator's personal skill account.
 

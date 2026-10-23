@@ -1,25 +1,27 @@
 {
-  "version": "0.1.4",
+  "version": "0.2.0",
   "sha256": {
-    "adapters/chatgpt/compact-instructions.txt": "7164553b2f533666009ad3f6aef3a1445057b77135b3f5b0643bb0268484493b",
-    "adapters/chatgpt/custom-instructions.txt": "aa53fdcd5520f377e49e33cc477ae3c576ca58b845bd61a2aff1c01bcfd801b5",
-    "adapters/claude-code/CLAUDE.md": "aa53fdcd5520f377e49e33cc477ae3c576ca58b845bd61a2aff1c01bcfd801b5",
-    "adapters/codex/AGENTS.md": "aa53fdcd5520f377e49e33cc477ae3c576ca58b845bd61a2aff1c01bcfd801b5",
-    "adapters/cursor/talkspec.mdc": "18d4a2c5cb1ee4ceba930e0e71183039610ba1e479ee133f024cb5790e3fc02e",
-    "adapters/cursor/user-rules.txt": "aa53fdcd5520f377e49e33cc477ae3c576ca58b845bd61a2aff1c01bcfd801b5",
-    "adapters/generic/system-prompt.md": "2178e289effd01491dfccf88817f9dd4cffd38a37a9a7be48ec8f6b740269f62",
-    "adapters/grok/system-message.json": "1322cf59096b1c21a970d28f0d1f8ed694ec16fa14e636ca9084364e7e862598",
-    "skills/talkspec/SKILL.md": "c57b00dadcc45b79bfec0cd8c9ceb89a0984d2b4b1caa9afd33acbb171229403",
+    "adapters/chatgpt/compact-instructions.txt": "30ca859cf74e6965cd1060b4b88c94300e0522a3909200e0d65e643843da8f50",
+    "adapters/chatgpt/custom-instructions.txt": "a5ea8ae87ce101c7ff6e7fa156e6eabf3e38ded429eb8b6c41072c2d879f406b",
+    "adapters/claude-code/CLAUDE.md": "a5ea8ae87ce101c7ff6e7fa156e6eabf3e38ded429eb8b6c41072c2d879f406b",
+    "adapters/codex/AGENTS.md": "a5ea8ae87ce101c7ff6e7fa156e6eabf3e38ded429eb8b6c41072c2d879f406b",
+    "adapters/cursor/talkspec.mdc": "3ae4ac54d72cda05277ff9b8cf1d6622507834e7670c4119e35486d54a2d2316",
+    "adapters/cursor/user-rules.txt": "a5ea8ae87ce101c7ff6e7fa156e6eabf3e38ded429eb8b6c41072c2d879f406b",
+    "adapters/generic/system-prompt.md": "247876675e0feb69627d4e2850199d734b3e0a9db79489ab6a31c0eebac38685",
+    "adapters/grok/system-message.json": "54d1928744ab4e84f18f80bd452b898c8a0543e69b2ee8f66ce9b1319a984a4f",
+    "skills/talkspec/SKILL.md": "3335ea8525d41612672964286512a793ea96ef5f4b766bd16048058c67606352",
     "skills/talkspec/agents/openai.yaml": "5c7acca8a49efb5721507ce48e40364f21498ed0e7e2d46a2aac636c0a918d50",
     "skills/talkspec/references/decision.md": "ec916d2cbaeee6692612f769109db26bcf136ee727176b68acda604d9b3ef582",
     "skills/talkspec/references/execution.md": "cc8960e8aeaea9bc761513ba08a8b58759cf6a021ad59dddd327e1f2f05d8d7f",
+    "skills/talkspec/references/languages/en.md": "df113f8ef978d4f6212e4facb2727784b8abeea4741278f801900a50ccc8ad18",
+    "skills/talkspec/references/languages/ru.md": "993eb31b178f001695090a1c469ea7ae39223f64b4289b73603bcd9ae3484a1a",
     "skills/talkspec/references/learning.md": "6a33452bf25eeda8dadebc9e635397e12deffd1f2b24fef9bdaeed9977d0b2f5",
     "skills/talkspec/references/quick-answer.md": "55fb7f8629537e1de58052f29cb1ea2c39edbcb904c1e555ec65f50882ad1a7a",
     "skills/talkspec/references/research.md": "67aa0185c97e2a4598716aadc15c158f55b0cd047149f08a6b4b0e1945811363",
     "skills/talkspec/references/troubleshooting.md": "41ed50d40e8c5af22b11e863323772d42f7f542da9434103084d891ee15dfacd"
   },
   "instruction_characters": {
-    "full": 6044,
-    "compact": 1965
+    "full": 6231,
+    "compact": 1987
   }
 }

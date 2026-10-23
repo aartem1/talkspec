@@ -8,6 +8,14 @@ TalkSpec is a universal communication skill for AI assistants. It adapts to the 
 
 The repository is written in English; TalkSpec can be used in any language. The assistant replies in the user's language unless another language is requested. English instructions do not require English answers.
 
+## Structure
+
+- **Core** — [`spec/rules.json`](spec/rules.json) plus the scenario files in [`spec/scenarios/`](spec/scenarios/), all in English. The core names universal categories, not forms tied to one language.
+- **Language sections** — [`spec/languages/`](spec/languages/) holds one file per language, each written in that language: `en.md` (English) and `ru.md` (Russian). A section shows how the universal categories appear in its language and adds rules that exist only there. It is reference material for the skill, not part of the always-on instructions; adapters carry a pointer to it.
+- **Default** — English is the default language section: when the reply's language has no section, the English section applies.
+
+To add a language, write `spec/languages/<code>.md` in that language — first how the universal categories appear in it, then its language-only rules — and regenerate. The build copies the file into the skill's references and links it from the skill.
+
 ## Choose how it applies
 
 - **Always-on instructions** are the recommended starting point for a consistent communication style. They use the host's existing instruction mechanism.
@@ -55,7 +63,7 @@ There are no fixed list counts, forced status recaps, mandatory closing actions,
 
 ## Maintain one source
 
-Edit [`spec/rules.json`](spec/rules.json) and [`spec/scenarios/`](spec/scenarios/), then regenerate. Full and compact wording live together by rule. Generated adapters should not be edited independently.
+Edit [`spec/rules.json`](spec/rules.json), [`spec/scenarios/`](spec/scenarios/), and [`spec/languages/`](spec/languages/), then regenerate. Full and compact wording live together by rule. Generated adapters should not be edited independently.
 
 ```bash
 python3 scripts/build.py

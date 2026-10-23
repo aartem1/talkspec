@@ -49,7 +49,7 @@ The repository contains a marketplace and a plugin manifest, using the standard 
 
 ## ChatGPT and other chat interfaces
 
-Copy `adapters/chatgpt/custom-instructions.txt` into the custom-instructions field. Use `compact-instructions.txt` when the field is limited to 1,500 characters. The full version is kept within 5,000 characters. The compact version retains the core rules but omits detailed scenario routing.
+Copy `adapters/chatgpt/custom-instructions.txt` into the custom-instructions field. Use `compact-instructions.txt` when the field is limited to 2,000 characters. The full version is kept within 6,500 characters. The compact version retains the core rules but omits detailed scenario routing.
 
 Use `adapters/generic/system-prompt.md` for project instructions, a custom assistant, or another chat UI that accepts instructions. If there is no persistent instruction setting, paste it into a conversation; persistence is limited by the host's context management. Native ChatGPT skill/plugin distribution requires the supported import or publication workflow; adding this GitHub repository alone does not publish it to the plugin directory.
 

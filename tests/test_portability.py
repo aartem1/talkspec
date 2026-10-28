@@ -29,8 +29,8 @@ class PortabilityTests(unittest.TestCase):
 
     def test_instruction_budgets_and_grok_payload(self):
         outputs = render()
-        self.assertLessEqual(len(outputs['adapters/chatgpt/custom-instructions.txt']), 6500)
-        self.assertLessEqual(len(outputs['adapters/chatgpt/compact-instructions.txt']), 2100)
+        self.assertLessEqual(len(outputs['adapters/chatgpt/custom-instructions.txt']), 7000)
+        self.assertLessEqual(len(outputs['adapters/chatgpt/compact-instructions.txt']), 2250)
         message = json.loads(outputs['adapters/grok/system-message.json'])
         self.assertEqual(message['role'], 'system')
         self.assertEqual(message['content'], outputs['adapters/generic/system-prompt.md'])

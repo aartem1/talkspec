@@ -5,8 +5,10 @@ The core rules name categories; this section shows how they appear in English an
 ## The universal categories in English
 
 - The hidden verb hides in a nominalization: a noun ending in -tion, -ment, -ance, or -ness, or a verb diluted into a support phrase (make a decision, provide assistance, conduct an investigation). Recover the verb and give it an actor: implement, decide, help, investigate.
-- The noun chain is the attributive stack: quality assurance process documentation review. Break any chain over three nouns with verbs or of-phrases until each noun has one clear role.
+- The noun chain is the attributive stack: quality assurance process documentation review. Break any chain over three nouns with verbs or of-phrases until each noun has one clear role. A chain ending in an abstract noun with no object — the direction of the improvements, the order of the process — has lost its referent at any length: name the object or use a verb.
+- The compressed label squeezes a whole claim into a noun phrase that only the explanation after it can decode: the order of the reverse direction. Replace the label with the clause it abbreviates: build in the reverse of the usual order — the simple version first, complexity one step at a time.
 - The sequence label opens the sentence: additionally, moreover, furthermore, first, then, finally. Name the actual relation — cause, condition, contrast — or cut the label and let the sentences stand in order.
+- The announcement stamp opens a text by saying what it will do instead of doing it: This article will discuss…, It is important to note that…. Cut it and start with the claim itself.
 - The empty evaluation is the unmeasured adjective: fast, seamless, robust, significant. Give the fact behind it or cut it.
 
 ## English only
